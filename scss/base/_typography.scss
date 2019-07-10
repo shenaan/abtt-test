@@ -1,0 +1,93 @@
+/**
+ * Basic typography style for copy text
+ */
+
+html {
+    // This defines what 1 rem is
+    font-size: 18px;
+}
+*{
+  -webkit-font-smoothing: antialiased;
+}
+body {
+    color: $text-color;
+    font: normal 1rem $text-font-stack;
+    letter-spacing: 0.25px;
+}
+h2{
+  font-size: 1.5rem;
+}
+h3{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+h4{
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.link {
+    color: $white-color;
+    font-weight: 600;
+    font-size: 1.5rem;
+    max-width: 290px;
+    display: block;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    &:after{
+      content: "";
+      width: 100%;
+      margin: 0 auto;
+      background: $yellow-color;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      @include transition;
+    }
+    &:hover{
+      &:after{
+            width: 30px;
+      }
+    }
+    @include respond-to(md){
+        font-size: 1.7rem;
+        max-width: 40%;
+        padding: 10px 0;
+    }
+    &--dark{
+      color: $dark-color;
+      @include respond-to(md){
+        max-width: 100%;
+      }
+    }
+    &--small{
+      font-size: 1rem;
+      display: inline-block;
+      @include respond-to(md){
+        font-size: 1.1rem;
+      }
+    }
+
+}
+.link-more{
+  display: flex;
+  align-items: center;
+  letter-spacing: 0;
+  font-weight: bold;
+  line-height: 18px;
+  img{
+    width: 10px;
+    height: 15px;
+    margin-left: 3px;
+    @include transition;
+  }
+  &:hover{
+    img{
+        transform: translateX(45px);
+        margin-left: 0;
+    }
+  }
+}
